@@ -78,7 +78,7 @@ export default function HeroSection() {
             <div className="relative flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
               <div className="absolute -inset-8 bg-gradient-to-r from-primary/[0.08] via-accent/[0.04] to-transparent rounded-full blur-2xl pointer-events-none" />
               <a
-                href="/auth"
+                href="/sign-up"
                 className="relative shimmer-btn px-8 py-3.5 rounded-xl bg-gradient-cta text-white font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all hover:scale-105"
               >
                 Close Your First Client — Free

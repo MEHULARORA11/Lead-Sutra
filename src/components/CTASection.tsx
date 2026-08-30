@@ -22,7 +22,7 @@ export default function CTASection() {
           <div className="relative inline-block">
             <div className="absolute -inset-3 rounded-2xl glow-pulse opacity-60 pointer-events-none" />
             <a
-              href="/auth"
+              href="/sign-up"
               className="relative shimmer-btn inline-flex items-center justify-center gap-2 bg-gradient-cta text-white shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all text-sm font-semibold px-10 h-14 rounded-xl hover:scale-105"
             >
               Close Your First Client — Free

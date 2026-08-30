@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { SignInButton, SignUpButton, Show, UserButton } from '@clerk/nextjs';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -71,18 +72,21 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center justify-end gap-3 min-w-[180px]">
-            <a
-              href="/auth"
-              className="h-9 px-3 rounded-md text-[13px] font-medium text-muted-foreground hover:text-foreground hover:bg-accent/10 transition-colors inline-flex items-center"
-            >
-              Log In
-            </a>
-            <a
-              href="/auth"
-              className="inline-flex items-center justify-center h-9 bg-gradient-cta text-white shadow-lg shadow-primary/15 hover:shadow-primary/25 transition-all text-[13px] font-semibold px-5 rounded-lg"
-            >
-              Close Your First Client
-            </a>
+            <Show when="signed-out">
+              <SignInButton mode="modal">
+                <button className="h-9 px-3 rounded-md text-[13px] font-medium text-muted-foreground hover:text-foreground hover:bg-accent/10 transition-colors inline-flex items-center">
+                  Log In
+                </button>
+              </SignInButton>
+              <SignUpButton mode="modal">
+                <button className="inline-flex items-center justify-center h-9 bg-gradient-cta text-white shadow-lg shadow-primary/15 hover:shadow-primary/25 transition-all text-[13px] font-semibold px-5 rounded-lg">
+                  Close Your First Client
+                </button>
+              </SignUpButton>
+            </Show>
+            <Show when="signed-in">
+              <UserButton />
+            </Show>
           </div>
 
           {/* Mobile Menu Button */}
@@ -145,18 +149,23 @@ export default function Navbar() {
               </a>
             </nav>
             <div className="flex flex-col gap-2">
-              <a
-                href="/auth"
-                className="text-sm font-medium text-muted-foreground hover:text-foreground px-2 py-1"
-              >
-                Log In
-              </a>
-              <a
-                href="/auth"
-                className="inline-flex items-center justify-center bg-gradient-cta text-white text-sm font-semibold px-5 py-2.5 rounded-lg"
-              >
-                Close Your First Client
-              </a>
+              <Show when="signed-out">
+                <SignInButton mode="modal">
+                  <button className="text-sm font-medium text-left text-muted-foreground hover:text-foreground px-2 py-1">
+                    Log In
+                  </button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                  <button className="inline-flex items-center justify-center bg-gradient-cta text-white text-sm font-semibold px-5 py-2.5 rounded-lg">
+                    Close Your First Client
+                  </button>
+                </SignUpButton>
+              </Show>
+              <Show when="signed-in">
+                <div className="px-2 py-1">
+                  <UserButton />
+                </div>
+              </Show>
             </div>
           </div>
         )}

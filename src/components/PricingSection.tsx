@@ -50,7 +50,7 @@ const plans: Plan[] = [
     ],
     footer: '200 saved leads · 30 reports · 3 bulk imports/mo',
     cta: 'Close My First Client',
-    ctaHref: '/auth',
+    ctaHref: '/sign-up',
     highlighted: false,
     icon: (
       <svg
@@ -96,7 +96,7 @@ const plans: Plan[] = [
     ],
     footer: '1,500 saved leads · 200 reports · 20 website monitors',
     cta: 'Start Closing Clients',
-    ctaHref: '/auth',
+    ctaHref: '/sign-up',
     highlighted: true,
     badge: 'Most Agencies Start Here',
     icon: (
@@ -138,7 +138,7 @@ const plans: Plan[] = [
     ],
     footer: '50,000 saved leads · Unlimited reports · 20,000 lead exports',
     cta: 'Scale My Agency',
-    ctaHref: '/auth',
+    ctaHref: '/sign-up',
     highlighted: false,
     icon: (
       <svg

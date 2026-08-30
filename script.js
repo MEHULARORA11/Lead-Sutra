@@ -1,0 +1,1 @@
+const fs = require('fs'); const path = require('path'); const d = 'src/components'; fs.readdirSync(d).forEach(f = const p = path.join(d, f); if (f.endsWith('.tsx')) { let c = fs.readFileSync(p, 'utf8'); if (c.includes('href=\" "/auth\')) { fs.writeFileSync(p, c.replace(/href=\\/auth\/g, 'href=\/sign-up\')); console.log('Updated ' + f); } } });  

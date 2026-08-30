@@ -1,3 +1,4 @@
+import { ClerkProvider } from '@clerk/nextjs';
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
 import '@/styles/index.css';
@@ -38,7 +39,9 @@ export default function RootLayout({
         />
         <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" />
       </head>
-      <body className="min-h-screen bg-background text-foreground overflow-x-clip">{children}</body>
+      <body className="min-h-screen bg-background text-foreground overflow-x-clip">
+        <ClerkProvider>{children}</ClerkProvider>
+      </body>
     </html>
   );
 }
