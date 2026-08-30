@@ -1,5 +1,7 @@
 # LeadSutra Clone
 
+![LeadSutra Clone](./public/images/screenshot.png)
+
 A modern, high-performance landing page and client discovery platform clone built for marketing agencies and freelancers.
 
 ## 🚀 Overview
