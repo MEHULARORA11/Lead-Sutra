@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 33% 97%;
+    --foreground: 222 47% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 15%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 20% 93%;
+    --secondary-foreground: 222 47% 15%;
+    --muted: 30 20% 93%;
+    --muted-foreground: 222 20% 50%;
+    --accent: 174 92% 38%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 24 95% 53%;
+    --radius: 0.75rem;
+    --aurora: 248 68% 64%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(24 95% 53%), hsl(174 92% 38%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-animated {
+    background: linear-gradient(135deg, hsl(24 95% 53%), hsl(174 92% 38%), hsl(24 95% 53%));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .bg-gradient-cta {
+    background: linear-gradient(135deg, hsl(24 95% 53%), hsl(20 90% 45%));
+  }
+
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(24 95% 53%), hsl(174 92% 38%));
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glow-border-saffron {
+    border-color: hsl(24 95% 53% / 0.4);
+    box-shadow: 0 0 20px hsl(24 95% 53% / 0.1);
+  }
+
+  .glow-border-indigo {
+    border-color: hsl(248 68% 64% / 0.4);
+    box-shadow: 0 0 20px hsl(248 68% 64% / 0.1);
+  }
+
+  .glow-pulse {
+    background: linear-gradient(135deg, hsl(24 95% 53% / 0.3), hsl(174 92% 38% / 0.3));
+    border-radius: 0.75rem;
+    filter: blur(8px);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .shimmer-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer-move 2s infinite;
+  }
+
+  .card-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-sheen::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.05) 50%, transparent 60%);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+    opacity: 0;
+  }
+
+  .card-sheen:hover::before {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+  }
+
+  .text-3d-matte {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  }
+
+  .section-divider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(24 95% 53% / 0.3), transparent);
+  }
+
+  .marquee-scroll {
+    animation: marquee-scroll 25s linear infinite;
+  }
+
+  .radar-ring {
+    animation: radar-ring 3s ease-out infinite;
+  }
+
+  .radar-ring-delayed {
+    animation: radar-ring 3s ease-out 1s infinite;
+  }
+
+  .radar-ring-delayed-2 {
+    animation: radar-ring 3s ease-out 2s infinite;
+  }
+
+  .testimonial-col-1 {
+    animation: testimonial-scroll 25s linear infinite;
+  }
+
+  .testimonial-col-2 {
+    animation: testimonial-scroll 30s linear infinite reverse;
+  }
+
+  .testimonial-col-3 {
+    animation: testimonial-scroll 22s linear infinite;
+  }
+}
+
+@keyframes shimmer-move {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes radar-ring {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+@keyframes testimonial-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
