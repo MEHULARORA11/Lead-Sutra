@@ -1,6 +1,8 @@
 'use client';
 import React from 'react';
 
+import Link from 'next/link';
+
 export default function CTASection() {
   return (
     <section className="py-32 lg:py-40 relative overflow-hidden">
@@ -21,7 +23,7 @@ export default function CTASection() {
 
           <div className="relative inline-block">
             <div className="absolute -inset-3 rounded-2xl glow-pulse opacity-60 pointer-events-none" />
-            <a
+            <Link
               href="/sign-up"
               className="relative shimmer-btn inline-flex items-center justify-center gap-2 bg-gradient-cta text-white shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all text-sm font-semibold px-10 h-14 rounded-xl hover:scale-105"
             >
@@ -40,7 +42,7 @@ export default function CTASection() {
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
               </svg>
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-8 text-muted-foreground">

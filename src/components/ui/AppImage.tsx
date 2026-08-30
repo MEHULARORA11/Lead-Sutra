@@ -19,7 +19,6 @@ interface AppImageProps {
   fallbackSrc?: string;
   loading?: 'lazy' | 'eager';
   unoptimized?: boolean;
-  [key: string]: any;
 }
 
 const AppImage = memo(function AppImage({
@@ -71,7 +70,7 @@ const AppImage = memo(function AppImage({
   }, [className, isLoading, onClick]);
 
   const imageProps = useMemo(() => {
-    const baseProps: any = {
+    const baseProps = {
       src: imageSrc,
       alt,
       className: imageClassName,
@@ -81,7 +80,7 @@ const AppImage = memo(function AppImage({
       onError: handleError,
       onLoad: handleLoad,
       onClick,
-    };
+    } as React.ComponentProps<typeof Image>;
 
     if (priority) {
       baseProps.priority = true;
@@ -114,6 +113,7 @@ const AppImage = memo(function AppImage({
       <div className="relative" style={{ width: '100%', height: '100%' }}>
         <Image
           {...imageProps}
+          alt={alt || ''}
           fill
           sizes={sizes || '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'}
           style={{ objectFit: 'cover' }}
@@ -124,7 +124,14 @@ const AppImage = memo(function AppImage({
   }
 
   return (
-    <Image {...imageProps} width={width || 400} height={height || 300} sizes={sizes} {...props} />
+    <Image
+      {...imageProps}
+      alt={alt || ''}
+      width={width || 400}
+      height={height || 300}
+      sizes={sizes}
+      {...props}
+    />
   );
 });
 

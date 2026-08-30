@@ -3,7 +3,6 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@clerk/nextjs';
-import Icon from '@/components/ui/AppIcon';
 
 export default function NotFound() {
   const router = useRouter();
