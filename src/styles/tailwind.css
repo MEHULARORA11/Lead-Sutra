@@ -97,7 +97,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     animation: shimmer-move 2s infinite;
   }
 
@@ -113,7 +113,12 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.05) 50%, transparent 60%);
+    background: linear-gradient(
+      45deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.05) 50%,
+      transparent 60%
+    );
     transform: rotate(45deg);
     transition: all 0.5s;
     opacity: 0;
@@ -125,7 +130,7 @@
   }
 
   .text-3d-matte {
-    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
   }
 
   .section-divider {
@@ -167,35 +172,66 @@
 }
 
 @keyframes shimmer-move {
-  0% { left: -100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes radar-ring {
-  0% { transform: scale(0.8); opacity: 0.8; }
-  100% { transform: scale(1.2); opacity: 0; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
 }
 
 @keyframes testimonial-scroll {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 @keyframes ping {
-  75%, 100% { transform: scale(2); opacity: 0; }
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }

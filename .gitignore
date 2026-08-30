@@ -6,6 +6,7 @@ out
 dist
 *.tgz
 
+.next/
 # code coverage
 coverage
 *.lcov
