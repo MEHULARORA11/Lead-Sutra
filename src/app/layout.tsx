@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Metadata, Viewport } from 'next';
-import '../styles/index.css';
+import '@/styles/index.css';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -9,7 +9,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'LeadSutra — AI Client Discovery Platform for Agencies',
-  description: 'LeadSutra helps marketing agencies and freelancers discover businesses that need services — AI audits websites, detects digital gaps, and generates personalized pitches. Start free.',
+  description:
+    'LeadSutra helps marketing agencies and freelancers discover businesses that need services — AI audits websites, detects digital gaps, and generates personalized pitches. Start free.',
   icons: {
     icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
   },
@@ -30,8 +31,13 @@ export default function RootLayout({
           rel="stylesheet"
         />
 
-        <script type="module" async src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fleadsutra3143back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20" />
-        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" /></head>
+        <script
+          type="module"
+          async
+          src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fleadsutra3143back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.20"
+        />
+        <script type="module" defer src="https://static.rocket.new/rocket-shot.js?v=0.0.2" />
+      </head>
       <body className="min-h-screen bg-background text-foreground overflow-x-clip">{children}</body>
     </html>
   );
